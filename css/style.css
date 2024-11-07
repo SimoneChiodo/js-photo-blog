@@ -1,6 +1,9 @@
 /************************************************
     CUSTOM PROPERTIES
  ************************************************/
+:root {
+    --header-height: 15vh;
+}
 
 /************************************************
     RESET 
@@ -14,22 +17,55 @@
 /************************************************
     UTILITIES 
  ************************************************/
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* POSTS */
+.post-container {
+    position: relative;
+    padding: 1rem;
+    background-color: whitesmoke;
+}
+
+.post-pin {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.post-image {
+    width: 300px;
+    aspect-ratio: 1/1;
+}
+
+.post-description {
+    margin-top: 1rem;
+}
 
 /************************************************
     HEADER 
  ************************************************/
+header {
+    background-image: url(../img/wall.png);
+    height: var(--header-height);
+}
+
+header h1 {
+    font-size: 5rem;
+}
 
 /************************************************
     MAIN 
  ************************************************/
-
-/************************************************
-    FOOTER 
- ************************************************/
-
-/************************************************
-    RESPONSIVE: MOBILE-FIRST
- ************************************************/
+main {
+    background-image: url(../img/cork.png);
+    height: calc(100vh - var(--header-height));
+}
 
 /************************************************
     FONTS
