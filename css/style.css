@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(../img/cork.png);
+}
+
 /************************************************
     UTILITIES 
  ************************************************/
@@ -21,14 +25,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 /* POSTS */
 .post-container {
     position: relative;
-    padding: 1rem;
     background-color: whitesmoke;
+    width: fit-content;
 }
 
 .post-pin {
@@ -39,8 +42,9 @@
 }
 
 .post-image {
-    width: 300px;
     aspect-ratio: 1/1;
+    width: 300px;
+    width: clamp(90px, 50vw, 300px);
 }
 
 .post-description {
@@ -52,7 +56,6 @@
  ************************************************/
 header {
     background-image: url(../img/wall.png);
-    height: var(--header-height);
 }
 
 header h1 {
@@ -62,9 +65,20 @@ header h1 {
 /************************************************
     MAIN 
  ************************************************/
-main {
-    background-image: url(../img/cork.png);
-    height: calc(100vh - var(--header-height));
+
+/************************************************
+    RESPONSIVE: MOBILE-FIRST
+ ************************************************/
+@media screen and (max-width: 702px) {
+    /*===============
+    UTILITIES 
+    ===============*/
+
+    /* POSTS */
+    /* .post-image {
+        aspect-ratio: 1/1;
+        width: 250px;
+    } */
 }
 
 /************************************************
