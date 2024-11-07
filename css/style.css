@@ -21,6 +21,10 @@ body {
 /************************************************
     UTILITIES 
  ************************************************/
+h1 {
+    font-size: 3rem;
+}
+
 .container-center {
     display: flex;
     justify-content: center;
@@ -41,14 +45,15 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.post-image,
+.post-description {
+    width: min(70vw, 280px);
+}
 .post-image {
     aspect-ratio: 1/1;
-    width: clamp(90px, 50vw, 300px);
 }
-
 .post-description {
     margin-top: 1rem;
-    width: clamp(90px, 50vw, 300px);
 }
 
 /************************************************
@@ -58,13 +63,36 @@ header {
     background-image: url(../img/wall.png);
 }
 
-header h1 {
-    font-size: 5rem;
-}
-
 /************************************************
     MAIN 
  ************************************************/
+
+/************************************************
+    RESPONSIVE: MOBILE-FIRST
+ ************************************************/
+/* MEDIUM */
+@media screen and (min-width: 680px) {
+    /*====================
+        UTILITIES
+    ====================*/
+    h1 {
+        font-size: 4rem;
+    }
+    .post-image,
+    .post-description {
+        width: clamp(90px, 50vw, 280px);
+    }
+}
+
+/* LARGE */
+@media screen and (min-width: 992px) {
+    /*====================
+        UTILITIES
+    ====================*/
+    h1 {
+        font-size: 5rem;
+    }
+}
 
 /************************************************
     FONTS

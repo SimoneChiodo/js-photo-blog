@@ -6,8 +6,6 @@ const postsNumber = 6;
 fetch("https://jsonplaceholder.typicode.com/photos?_limit=" + postsNumber)
     .then((response) => response.json())
     .then((data) => {
-        console.table(data);
-
         //Genero i post
         data.forEach((element) => {
             createPost(element.url, element.title);
