@@ -45,6 +45,10 @@ h1 {
 }
 
 /* POSTS */
+#posts-table > .col {
+    height: 425px;
+}
+
 .post-container {
     position: relative;
     background-color: whitesmoke;
@@ -86,6 +90,7 @@ h1 {
 }
 .post-description {
     margin-top: 1rem;
+    height: 50px;
 }
 
 /* POSTS OVERLAY */

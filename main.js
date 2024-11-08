@@ -46,9 +46,9 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=" + postsNumber)
 function createPost(id, img, description) {
     postsTable.innerHTML += `
         <!-- Post Card -->
-        <div id="post-${id}" class="col py-3 container-center">
+        <div id="post-${id}" class="col container-center mb-3">
             <!-- Post Container -->
-            <div class="post-container p-3 h-100"> 
+            <div class="post-container p-3 hoverflow-y-hidden"> 
                 <!-- Pin Image -->
                 <img
                     src="./img/pin.svg"
