@@ -21,6 +21,9 @@ body {
 
 button {
     font-family: Helvetica, Arial, sans-serif !important;
+    /* font-size: 1.7rem !important; */
+    padding: 5px 30px !important;
+    font-size: clamp(1rem, 6vw, 1.7rem) !important;
 }
 
 /************************************************
@@ -72,11 +75,9 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
-}
 
-#overlay button {
-    font-size: 1.7rem !important;
-    padding: 5px 30px !important;
+    color: whitesmoke;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .post-overlay-container {
@@ -107,6 +108,14 @@ header {
 /* MEDIUM */
 @media screen and (min-width: 680px) {
     /*====================
+        RESET
+    ====================*/
+    button {
+        font-size: min(30vw, 1.7rem) !important;
+        padding: 5px 30px !important;
+    }
+
+    /*====================
         UTILITIES
     ====================*/
     h1 {
@@ -128,6 +137,14 @@ header {
 
 /* LARGE */
 @media screen and (min-width: 992px) {
+    /*====================
+        RESET
+    ====================*/
+    button {
+        font-size: min(30vw, 1.7rem) !important;
+        padding: 5px 30px !important;
+    }
+
     /*====================
         UTILITIES
     ====================*/
