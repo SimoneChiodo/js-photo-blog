@@ -6,6 +6,7 @@ const hidePost = document.querySelectorAll("[data-activate=post-overlay]");
 const overlay = document.getElementById("overlay");
 const overlayImage = document.getElementById("overlay-image");
 let posts = [];
+let postsSpinners = [];
 
 // API per generare Immagini
 fetch("https://jsonplaceholder.typicode.com/photos?_limit=" + postsNumber)
@@ -16,8 +17,27 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=" + postsNumber)
             // Creo un post per l'immagine
             createPost(element.id, element.url, element.title);
 
-            // Assegno la funzione che un overlay dell'immagine
-            if (element.id === postsNumber) activateOverlay();
+            // Verifico se è l'ultimo post
+            if (element.id === postsNumber) {
+                // Assegno la funzione che permette di aprire l'overlay
+                activateOverlay();
+
+                // Rimuovo lo spinner quando l'immagine viene caricata
+                posts.forEach((post) => {
+                    // Prelevo degli elementi contenuti all'interno del post
+                    let image = post.querySelector(".post-image");
+                    let spinner = post.querySelector(".spinner");
+
+                    // Al caricamento dell'immagine rimuovo lo spinner
+                    image.addEventListener("load", function () {
+                        spinner.classList.add("d-none");
+                    });
+                    // Se l'immagine non si carica rimuovo lo stesso lo spinner
+                    image.addEventListener("error", function () {
+                        spinner.classList.add("d-none");
+                    });
+                });
+            }
         });
     })
     .catch((error) => console.error(error));
@@ -28,7 +48,7 @@ function createPost(id, img, description) {
         <!-- Post Card -->
         <div id="post-${id}" class="col py-3 container-center">
             <!-- Post Container -->
-            <div class="post-container p-3"> 
+            <div class="post-container p-3 h-100"> 
                 <!-- Pin Image -->
                 <img
                     src="./img/pin.svg"
@@ -36,6 +56,8 @@ function createPost(id, img, description) {
                     class="post-pin"
                     draggable="false"
                 />
+                <!-- Spinner -->
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-2xl spinner"></i>
                 <!-- Card Image -->
                 <img
                     src="${img}"
@@ -64,17 +86,20 @@ function activateOverlay() {
         element
             .querySelector(".post-container")
             .addEventListener("click", () => {
-                // Apro l'overlay
-                overlay.classList.remove("d-none");
-                body.classList.add("overflow-y-hidden");
-
                 //Prelevo l'immagine attuale
                 const actualImage = document.querySelector(
                     `#${element.id} .post-image`
-                ).src;
+                );
 
-                // Aggiungo l'immagine all'overlay
-                overlayImage.src = actualImage;
+                // Apro l'overlay solo SE: l'immagine è stata caricata && non sia stata caricata erratamente
+                if (actualImage.complete && actualImage.naturalWidth > 0) {
+                    // Apro l'overlay
+                    overlay.classList.remove("d-none");
+                    body.classList.add("overflow-y-hidden");
+
+                    // Aggiungo l'immagine all'overlay
+                    overlayImage.src = actualImage.src;
+                }
             });
     }
 }
