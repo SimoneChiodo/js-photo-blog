@@ -3,6 +3,8 @@
  ************************************************/
 :root {
     --header-height: 15vh;
+    --system-font: Helvetica, Arial, sans-serif;
+    --cursive-font: "Edu TAS Beginner", cursive;
 }
 
 /************************************************
@@ -16,11 +18,11 @@
 
 body {
     background-image: url(../img/cork.png);
-    font-family: "Edu TAS Beginner", cursive;
+    font-family: var(--cursive-font);
 }
 
 button {
-    font-family: Helvetica, Arial, sans-serif !important;
+    font-family: var(--system-font) !important;
     padding: 5px 30px !important;
     font-size: clamp(1rem, 6vw, 1.7rem) !important;
 }
@@ -30,6 +32,7 @@ button {
  ************************************************/
 h1 {
     font-size: 3rem;
+    font-weight: 900;
 }
 
 .container-center {
@@ -95,7 +98,7 @@ h1 {
 
 /* POSTS OVERLAY */
 #overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -103,7 +106,7 @@ h1 {
     right: 0;
 
     color: whitesmoke;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--system-font);
 }
 
 .post-overlay-container {
