@@ -45,7 +45,7 @@
         </header>
 
         <!-- Main -->
-        <main class="overflow-x-hidden">
+        <main id="overlay-container" class="overflow-x-hidden">
             <!-- Posts Container -->
             <div class="container-center">
                 <!-- Posts Table -->
@@ -56,7 +56,7 @@
             </div>
 
             <!-- Posts Overlay -->
-            <div class="overlay">
+            <div id="overlay" class="d-none">
                 <div
                     class="post-overlay-container d-flex flex-column align-items-center justify-content-center gap-4"
                 >
@@ -71,7 +71,7 @@
                     <button
                         type="button"
                         class="btn btn-danger"
-                        data-activete="post-overlay"
+                        data-activate="post-overlay"
                     >
                         close
                     </button>

@@ -42,6 +42,9 @@ h1 {
     background-color: whitesmoke;
     width: fit-content;
 }
+.post-container:hover {
+    cursor: pointer;
+}
 
 .post-pin {
     position: absolute;
@@ -62,13 +65,18 @@ h1 {
 }
 
 /* POSTS OVERLAY */
-.overlay {
+#overlay {
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+#overlay button {
+    font-size: 1.7rem !important;
+    padding: 5px 30px !important;
 }
 
 .post-overlay-container {
@@ -80,11 +88,6 @@ h1 {
 .post-image-zoom {
     width: min(70vw, 400px);
     aspect-ratio: 1/1;
-}
-
-.overlay button {
-    font-size: 1.7rem !important;
-    padding: 5px 30px !important;
 }
 
 /************************************************
