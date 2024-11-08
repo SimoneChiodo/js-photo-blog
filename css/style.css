@@ -21,7 +21,6 @@ body {
 
 button {
     font-family: Helvetica, Arial, sans-serif !important;
-    /* font-size: 1.7rem !important; */
     padding: 5px 30px !important;
     font-size: clamp(1rem, 6vw, 1.7rem) !important;
 }
@@ -44,9 +43,26 @@ h1 {
     position: relative;
     background-color: whitesmoke;
     width: fit-content;
+    height: 390px;
+
+    box-shadow: none;
+    transition: transform 0.5s ease-in, box-shadow 0.5s ease-in;
 }
 .post-container:hover {
     cursor: pointer;
+    transform: rotate(10deg);
+    box-shadow: 5px 5px 20px black;
+    height: 400px;
+
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+}
+.post-container:hover .post-image {
+    width: min(70vw, 300px);
+
+    transition: all 0.3s ease-in;
+}
+.post-container:hover .post-pin {
+    display: none;
 }
 
 .post-pin {
@@ -59,6 +75,7 @@ h1 {
 .post-image,
 .post-description {
     width: min(70vw, 280px);
+    transition: width 0.5s ease-in-out;
 }
 .post-image {
     aspect-ratio: 1/1;
@@ -111,7 +128,7 @@ header {
         RESET
     ====================*/
     button {
-        font-size: min(30vw, 1.7rem) !important;
+        font-size: 1.7rem !important;
         padding: 5px 30px !important;
     }
 
@@ -137,14 +154,6 @@ header {
 
 /* LARGE */
 @media screen and (min-width: 992px) {
-    /*====================
-        RESET
-    ====================*/
-    button {
-        font-size: min(30vw, 1.7rem) !important;
-        padding: 5px 30px !important;
-    }
-
     /*====================
         UTILITIES
     ====================*/

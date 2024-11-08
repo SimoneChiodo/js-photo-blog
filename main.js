@@ -28,18 +28,20 @@ function createPost(id, img, description) {
         <!-- Post Card -->
         <div id="post-${id}" class="col py-3 container-center">
             <!-- Post Container -->
-            <div class="post-container p-3 h-100"> 
+            <div class="post-container p-3"> 
                 <!-- Pin Image -->
                 <img
                     src="./img/pin.svg"
                     alt="pin-image"
                     class="post-pin"
+                    draggable="false"
                 />
                 <!-- Card Image -->
                 <img
                     src="${img}"
                     alt="post-image"
                     class="post-image"
+                    draggable="false"
                 /> 
                 <!-- Card Description -->
                 <p class="post-description">${description}</p>
@@ -54,21 +56,27 @@ function activateOverlay() {
     posts = document.querySelectorAll("#posts-table > .col");
 
     // Aggiungo una funzione per quando clicco un post
-    posts.forEach((element) => {
-        element.addEventListener("click", () => {
-            // Apro l'overlay
-            overlay.classList.remove("d-none");
-            body.classList.add("overflow-y-hidden");
+    for (let i = 0; i < posts.length; i++) {
+        // Prelevo l'elemento attuale (contenente l'id del post)
+        let element = posts[i];
 
-            //Prelevo l'immagine attuale
-            const actualImage = document.querySelector(
-                `#${element.id} .post-image`
-            ).src;
+        // Prelevo il figlio dell'elemento
+        element
+            .querySelector(".post-container")
+            .addEventListener("click", () => {
+                // Apro l'overlay
+                overlay.classList.remove("d-none");
+                body.classList.add("overflow-y-hidden");
 
-            // Aggiungo l'immagine all'overlay
-            overlayImage.src = actualImage;
-        });
-    });
+                //Prelevo l'immagine attuale
+                const actualImage = document.querySelector(
+                    `#${element.id} .post-image`
+                ).src;
+
+                // Aggiungo l'immagine all'overlay
+                overlayImage.src = actualImage;
+            });
+    }
 }
 
 //Codice per eliminare gli overlay
