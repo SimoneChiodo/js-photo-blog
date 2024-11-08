@@ -45,12 +45,38 @@
         </header>
 
         <!-- Main -->
-        <main class="container-center overflow-x-hidden">
-            <!-- Posts Table -->
-            <div
-                id="posts-table"
-                class="row row-cols-md-2 row-cols-lg-3 pt-5 pb-3 w-100"
-            ></div>
+        <main class="overflow-x-hidden">
+            <!-- Posts Container -->
+            <div class="container-center">
+                <!-- Posts Table -->
+                <div
+                    id="posts-table"
+                    class="row row-cols-md-2 row-cols-lg-3 pt-5 pb-3 w-100"
+                ></div>
+            </div>
+
+            <!-- Posts Overlay -->
+            <div class="overlay">
+                <div
+                    class="post-overlay-container d-flex flex-column align-items-center justify-content-center gap-4"
+                >
+                    <!-- Overlay Image -->
+                    <img
+                        src="./img/wall.png"
+                        alt="zoom-in-post"
+                        class="post-image-zoom"
+                    />
+
+                    <!-- Overlay Button -->
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-activete="post-overlay"
+                    >
+                        close
+                    </button>
+                </div>
+            </div>
         </main>
 
         <!-- BOOTSTRAP JS -->

@@ -19,6 +19,10 @@ body {
     font-family: "Edu TAS Beginner", cursive;
 }
 
+button {
+    font-family: Helvetica, Arial, sans-serif !important;
+}
+
 /************************************************
     UTILITIES 
  ************************************************/
@@ -57,6 +61,32 @@ h1 {
     margin-top: 1rem;
 }
 
+/* POSTS OVERLAY */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.post-overlay-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.post-image-zoom {
+    width: min(70vw, 400px);
+    aspect-ratio: 1/1;
+}
+
+.overlay button {
+    font-size: 1.7rem !important;
+    padding: 5px 30px !important;
+}
+
 /************************************************
     HEADER 
  ************************************************/
@@ -79,9 +109,17 @@ header {
     h1 {
         font-size: 4rem;
     }
+
+    /* POSTS */
     .post-image,
     .post-description {
         width: clamp(90px, 50vw, 280px);
+    }
+
+    /* POSTS OVERLAY */
+    .post-image-zoom {
+        width: clamp(90px, 80vw, 400px);
+        aspect-ratio: 1/1;
     }
 }
 

@@ -10,7 +10,8 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=" + postsNumber)
         data.forEach((element) => {
             createPost(element.url, element.title);
         });
-    });
+    })
+    .catch((error) => console.error(error));
 
 // Funzione per generare 1 post
 function createPost(img, description) {
