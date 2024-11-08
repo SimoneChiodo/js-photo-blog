@@ -31,7 +31,7 @@ button {
     UTILITIES 
  ************************************************/
 h1 {
-    font-size: 3rem;
+    font-size: min(3rem, 15vw);
     font-weight: 900;
 }
 
@@ -49,7 +49,8 @@ h1 {
 
 /* POSTS */
 #posts-table > .col {
-    height: 425px;
+    height: min(100vw, 425px);
+    height: clamp(260px, 115vw, 425px);
 }
 
 .post-container {
@@ -152,6 +153,10 @@ header {
     }
 
     /* POSTS */
+    #posts-table > .col {
+        height: 425px;
+    }
+
     .post-image,
     .post-description {
         width: clamp(90px, 50vw, 280px);
@@ -173,7 +178,3 @@ header {
         font-size: 5rem;
     }
 }
-
-/************************************************
-    FONTS
- ************************************************/
