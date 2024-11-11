@@ -58,7 +58,6 @@ h1 {
     background-color: whitesmoke;
     width: fit-content;
 
-    box-shadow: none;
     transition: transform 0.5s ease-in, box-shadow 0.5s ease-in;
 }
 .post-container:hover {
