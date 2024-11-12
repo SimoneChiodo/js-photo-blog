@@ -14,11 +14,13 @@ fetch("https://jsonplaceholder.typicode.com/photos?_limit=" + postsNumber)
     .then((data) => {
         //Genero i post
         data.forEach((element) => {
+            // Destrutturazione
+            const { id, url, title } = element;
             // Creo un post per l'immagine
-            createPost(element.id, element.url, element.title);
+            createPost(id, url, title);
 
             // Verifico se è l'ultimo post
-            if (element.id === postsNumber) {
+            if (id === postsNumber) {
                 // Assegno la funzione che permette di aprire l'overlay
                 activateOverlay();
 
